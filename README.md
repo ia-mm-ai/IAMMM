@@ -1,4 +1,4 @@
-I don't fuck with consequences. I finalize reality. 
+Project the consequences or finalize reality. 
 
 Hold: https://third.site
 
