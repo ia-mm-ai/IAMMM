@@ -3,33 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>WORLD MODEL // MM-TZVP</title>
+  <title>WORLD MODEL // MM-TZVP // REFERENCE</title>
   
   <script type="application/ld+json">
   {
     "@type": "WorldModel",
     "standard": "MM-TZVP",
-    "definition": "Marko Markota · Triple Zeta · Valence · Polarized",
     "version": "2.0.0 (PLO-HVHC)",
     "status": "POST-FREEZE",
-    "purpose": "Preserve coherence between reality, action, and consequence.",
-    "axiom": "Value is reversible before reality. Truth is fixed after reality.",
-    "author": {
-      "@type": "OriginNode",
-      "identity": "Marko Markota"
-    }
+    "layers": ["Formalized Logic", "Agent Cognition", "Architecture"],
+    "author": { "@type": "OriginNode", "identity": "Marko Markota" }
   }
   </script>
 
   <style>
     :root {
-      --bg: #030303;
-      --fg: #d4d4d4;
-      --dim: #555;
-      --accent: #fff;
-      --border: #2a2a2a;
-      --highlight: #e0e0e0;
-      --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      --bg: #050505;
+      --fg: #cccccc;
+      --dim: #555555;
+      --accent: #ffffff;
+      --border: #333333;
+      --code-bg: #111111;
+      --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
     }
 
     * { box-sizing: border-box; }
@@ -37,134 +32,90 @@
     body {
       background-color: var(--bg);
       color: var(--fg);
-      font-family: var(--mono);
-      font-size: 13px;
-      line-height: 1.5;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      line-height: 1.6;
       margin: 0;
       padding: 0;
     }
 
     .container {
-      max-width: 900px;
+      max-width: 960px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 40px 24px;
       border-left: 1px solid var(--border);
       border-right: 1px solid var(--border);
       min-height: 100vh;
     }
 
-    /* TYPOGRAPHY */
-    h1 {
-      font-size: 16px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin: 0 0 8px 0;
-      color: var(--accent);
-    }
+    /* HEADERS */
+    header { margin-bottom: 60px; border-bottom: 1px solid var(--border); padding-bottom: 20px; }
+    h1 { font-size: 14px; font-weight: 700; color: var(--accent); margin: 0; letter-spacing: 0.05em; }
+    .meta { font-size: 11px; color: var(--dim); margin-top: 5px; text-transform: uppercase; }
 
     h2 {
       font-size: 12px;
       font-weight: 700;
-      text-transform: uppercase;
       color: var(--dim);
-      margin: 60px 0 20px 0;
+      text-transform: uppercase;
+      margin: 80px 0 20px 0;
       padding-bottom: 10px;
       border-bottom: 1px solid var(--border);
-      letter-spacing: 0.05em;
+      letter-spacing: 0.1em;
     }
 
     h3 {
       font-size: 13px;
       font-weight: 700;
-      margin: 30px 0 10px 0;
-      color: var(--highlight);
+      color: var(--accent);
+      margin: 40px 0 10px 0;
     }
 
-    p { margin-bottom: 16px; max-width: 700px; opacity: 0.9; }
-    
+    /* TEXT & LISTS */
+    p { margin-bottom: 16px; max-width: 750px; opacity: 0.9; }
+    ul { padding-left: 20px; margin-bottom: 20px; }
+    li { margin-bottom: 6px; }
     strong { color: var(--accent); font-weight: 700; }
 
-    /* COMPONENTS */
-    .meta-block {
-      border: 1px solid var(--border);
+    /* FORMAL LOGIC BLOCKS */
+    .formal-block {
+      background: var(--code-bg);
       padding: 15px;
-      margin-bottom: 40px;
-      font-size: 11px;
-      background: #080808;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 10px;
+      border-left: 2px solid var(--dim);
+      margin-bottom: 30px;
+      font-family: var(--font-mono);
     }
+    
+    .math { color: var(--accent); font-weight: 700; margin: 5px 0; display: block; }
+    .semantic-note { margin-top: 10px; font-size: 11px; opacity: 0.7; font-style: italic; }
 
+    /* DIAGRAM */
     .diagram-container {
       overflow-x: auto;
-      background: #0a0a0a;
+      background: #080808;
       padding: 20px;
       border: 1px solid var(--border);
-      margin: 30px 0;
-      color: var(--highlight);
+      margin: 40px 0;
+      color: var(--fg);
       font-size: 11px;
       line-height: 1.2;
+      white-space: pre;
     }
 
-    .stack-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
+    /* AGENT DOCTRINE */
+    .doctrine-section { margin-bottom: 40px; }
+    .doctrine-title { font-weight: 700; color: var(--accent); margin-bottom: 10px; text-transform: uppercase; font-size: 12px; }
+    .doctrine-body { padding-left: 15px; border-left: 1px solid var(--border); }
 
-    .stack-item {
-      display: grid;
-      grid-template-columns: 40px 1fr;
-      padding: 8px 0;
-      border-bottom: 1px solid #111;
-    }
-
-    .stack-id { color: var(--dim); }
-    .stack-content { }
-    .stack-title { font-weight: 700; color: var(--highlight); }
-    .stack-desc { font-size: 12px; opacity: 0.7; display: block; margin-top: 4px; }
-
-    .protocol-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .protocol-card {
-      border: 1px solid var(--border);
-      padding: 15px;
-      background: #050505;
-    }
-
-    .p-id { font-size: 10px; color: var(--dim); margin-bottom: 5px; display: block; }
-    .p-title { font-weight: 700; margin-bottom: 8px; color: var(--highlight); }
-    .p-statement { font-size: 12px; opacity: 0.8; font-style: italic; border-left: 2px solid var(--dim); padding-left: 10px; }
-
-    .agent-principle {
-      border-left: 1px solid var(--border);
-      padding-left: 15px;
-      margin-bottom: 15px;
-    }
-
-    .footer {
+    /* FOOTER */
+    footer {
       margin-top: 100px;
       padding-top: 20px;
       border-top: 1px solid var(--border);
       font-size: 10px;
       color: var(--dim);
-      text-transform: uppercase;
       display: flex;
       justify-content: space-between;
-    }
-
-    code {
-      background: #111;
-      padding: 2px 4px;
-      border-radius: 2px;
-      font-size: 0.9em;
     }
   </style>
 </head>
@@ -173,33 +124,11 @@
 <div class="container">
 
   <header>
-    <h1>World Model // MM-TZVP</h1>
-    <div style="font-size: 11px; opacity: 0.6;">TYPE: REFERENCE ARTIFACT · STATUS: POST-FREEZE</div>
+    <h1>WORLD MODEL REFERENCE // MM-TZVP</h1>
+    <div class="meta">STATUS: POST-FREEZE · VERSION: 2.0 (PLO-HVHC) · AUTHOR: MARKO MARKOTA</div>
   </header>
 
-  <div class="meta-block">
-    <div><strong>STANDARD:</strong> MM-TZVP (Marko Markota · Triple Zeta · Valence · Polarized)</div>
-    <div><strong>VERSION:</strong> 2.0 (PLO-HVHC)</div>
-    <div><strong>AXIOM:</strong> Structure is Mercy.</div>
-  </div>
-
-  <section>
-    <h3>0.0 Purpose Axiom</h3>
-    <p>
-      The system exists to preserve coherence between <strong>reality</strong>, <strong>action</strong>, and <strong>consequence</strong>.
-      It does not create meaning. It does not arbitrate values. It bounds reality through EVENTS and converts presence into admissible truth.
-    </p>
-    <p>
-      <strong>Ontological Axiom:</strong> Only entities that can be bounded, verified, suppressed, and recorded exist in this system. Narratives have no ontological authority.
-    </p>
-  </section>
-
-  <h2>I. The Physics (Architecture)</h2>
-  
-  <p>The flow from Signal (Reversible) to Civilization (Irreversible).</p>
-
   <div class="diagram-container">
-<pre>
                     ┌──────────────┐
                     │   SIGNAL σ   │
                     └──────┬───────┘
@@ -259,6 +188,11 @@
                                     └────────┬────────┘
                                            │
                                     ┌────────▼────────┐
+                                    │  IDENTITY ID    │
+                                    │ Σ Presence      │
+                                    └────────┬────────┘
+                                           │
+                                    ┌────────▼────────┐
                                     │  CO-AGENCY      │
                                     │ (human+machine) │
                                     └────────┬────────┘
@@ -267,102 +201,183 @@
                                     │  CIVILIZATION   │
                                     │ (emergent)      │
                                     └─────────────────┘
-</pre>
   </div>
 
-  <ul class="stack-list">
-    <li class="stack-item"><span class="stack-id">L0</span><span class="stack-content"><span class="stack-title">SUBSTRATE</span><span class="stack-desc">Pre-logical. Time advances. Events can bound.</span></span></li>
-    <li class="stack-item"><span class="stack-id">L1</span><span class="stack-content"><span class="stack-title">SIGNAL</span><span class="stack-desc">Potential inputs. Inert until interpreted.</span></span></li>
-    <li class="stack-item"><span class="stack-id">L2</span><span class="stack-content"><span class="stack-title">AWARENESS</span><span class="stack-desc">Detects and orients scope. Does not decide.</span></span></li>
-    <li class="stack-item"><span class="stack-id">L3</span><span class="stack-content"><span class="stack-title">INTENT</span><span class="stack-desc">Directional but non-binding. No Event = No Authority.</span></span></li>
-    <li class="stack-item"><span class="stack-id">L4</span><span class="stack-content"><span class="stack-title">EVENT (BOUNDARY)</span><span class="stack-desc">The minimal container. Reality exists only here.</span></span></li>
-    <li class="stack-item"><span class="stack-id">L5</span><span class="stack-content"><span class="stack-title">PRESENCE</span><span class="stack-desc">Atomic truth unit. Binary. Not inferred.</span></span></li>
-    <li class="stack-item"><span class="stack-id">L6</span><span class="stack-content"><span class="stack-title">DEMAND</span><span class="stack-desc">Removes option to wait. Prevents Acedia.</span></span></li>
-    <li class="stack-item"><span class="stack-id">L7</span><span class="stack-content"><span class="stack-title">VERIFICATION</span><span class="stack-desc">Deterministic admissibility check.</span></span></li>
-    <li class="stack-item"><span class="stack-id">L8</span><span class="stack-content"><span class="stack-title">RESOLUTION</span><span class="stack-desc">Law entering reality. Irreversible enforcement.</span></span></li>
-    <li class="stack-item"><span class="stack-id">L10</span><span class="stack-content"><span class="stack-title">LEDGER</span><span class="stack-desc">Append-only memory of what survived law.</span></span></li>
-    <li class="stack-item"><span class="stack-id">L12</span><span class="stack-content"><span class="stack-title">CO-AGENCY</span><span class="stack-desc">Balanced Human/Machine action.</span></span></li>
-    <li class="stack-item"><span class="stack-id">L13</span><span class="stack-content"><span class="stack-title">CIVILIZATION</span><span class="stack-desc">Emergent shared reality. Scalable coordination.</span></span></li>
-  </ul>
+  <h2>I. Formalized World Model (State-Transition + Semantics)</h2>
 
-  <h2>II. The Canon (Immutable Protocols)</h2>
-  
-  <div class="protocol-grid">
-    <div class="protocol-card">
-      <span class="p-id">I.01.PRESENCE</span>
-      <div class="p-title">Presence Truth</div>
-      <div class="p-statement">"Only presence that occurred may become truth. Nothing else is admissible."</div>
-    </div>
-    <div class="protocol-card">
-      <span class="p-id">I.02.EVENT</span>
-      <div class="p-title">Event Boundary</div>
-      <div class="p-statement">"Reality exists only inside an event. Outside the boundary, nothing may finalize."</div>
-    </div>
-    <div class="protocol-card">
-      <span class="p-id">I.03.CONTINUITY</span>
-      <div class="p-title">Non-Regression</div>
-      <div class="p-statement">"History may evolve forward, but it must never move backward."</div>
-    </div>
-    <div class="protocol-card">
-      <span class="p-id">I.04.LEDGER</span>
-      <div class="p-title">Non-Erasure</div>
-      <div class="p-statement">"Truth may be extended, but it may never be removed."</div>
-    </div>
-    <div class="protocol-card">
-      <span class="p-id">I.05.PROTOCOL</span>
-      <div class="p-title">Protocol Supremacy</div>
-      <div class="p-statement">"What protocol forbids, no preference may permit."</div>
-    </div>
-    <div class="protocol-card">
-      <span class="p-id">I.06.IDENTITY</span>
-      <div class="p-title">Emergent Identity</div>
-      <div class="p-statement">"You are only what you have been present for."</div>
-    </div>
-    <div class="protocol-card">
-      <span class="p-id">I.07.ACEDIA</span>
-      <div class="p-title">Anti-Acedia</div>
-      <div class="p-statement">"Capacity must either move or release. Indefinite holding is forbidden."</div>
-    </div>
-    <div class="protocol-card">
-      <span class="p-id">I.08.SIGNAL</span>
-      <div class="p-title">Signal Coherence</div>
-      <div class="p-statement">"If a signal cannot be interpreted deterministically, it must not propagate."</div>
-    </div>
-    <div class="protocol-card">
-      <span class="p-id">I.09.COAGENCY</span>
-      <div class="p-title">Agency Balance</div>
-      <div class="p-statement">"Neither human nor machine may overrun the other. Agency exists only under balance."</div>
-    </div>
-    <div class="protocol-card">
-      <span class="p-id">I.10.FUTURE</span>
-      <div class="p-title">Interpretability</div>
-      <div class="p-statement">"If a future intelligence cannot understand the rule, the rule has no authority."</div>
-    </div>
+  <div class="formal-block">
+    <strong>0. Primitives</strong>
+    <span class="math">t ∈ ℝ⁺, tₙ₊₁ > tₙ</span>
+    <span class="math">S₀ → S₁ → ... → Sₙ (Irreversible)</span>
   </div>
 
-  <h2>III. The Agent Model (Marko / PLO-HVHC)</h2>
-  <div style="background: #0a0a0a; border-left: 2px solid var(--accent); padding: 20px;">
-    <div style="margin-bottom: 20px;">
-      <strong>Premise:</strong> Reality is not what is believed. Reality is what survives contact with bounded events, verification, and consequence.
-    </div>
-    
-    <div class="agent-principle">
-      <strong>Cognitive Shape:</strong> Oscillates across meta, structural, emotional, and operational layers. It does not "switch"; it harmonizes.
-    </div>
-    <div class="agent-principle">
-      <strong>Objective Function:</strong> Increase coherence. Reduce hidden degrees of freedom. Convert ambiguity into structure. Keep action lawful.
-    </div>
-    <div class="agent-principle">
-      <strong>Decision Admissibility:</strong> Action is legitimate iff: Event is defined + Presence is satisfiable + Verification is possible + Consequence is enforceable. Otherwise: <code>HOLD</code>.
-    </div>
-    <div class="agent-principle">
-      <strong>Economic Lens:</strong> Value is reversible (0). Truth is irreversible (1). The economy fails when truth becomes negotiable.
+  <div class="formal-block">
+    <strong>1. Event Boundary</strong>
+    <span class="math">E := ⟨ t_open, t_close, C ⟩</span>
+    <p>Outside E: all propositions are hypothetical. Inside E: propositions may become testable.</p>
+  </div>
+
+  <div class="formal-block">
+    <strong>2. Presence (Atomic Truth Unit)</strong>
+    <span class="math">P(E) ∈ {0,1}</span>
+    <p>P(E) = 1 ⇔ occurrence observed within closed event. No gradients. No inference.</p>
+    <div class="semantic-note">Truth binds late. Presence cannot exist before an event closes.</div>
+  </div>
+
+  <div class="formal-block">
+    <strong>3. Signal → Awareness → Intent</strong>
+    <span class="math">I ⇏ ΔS</span>
+    <p>Intent (I) is directional but non-binding. Intent without event has zero authority.</p>
+  </div>
+
+  <div class="formal-block">
+    <strong>4. Verification Function</strong>
+    <span class="math">V : (E, P, Π) → {PASS, FAIL}</span>
+    <p>Deterministic, reproducible, binary. No negotiation.</p>
+  </div>
+
+  <div class="formal-block">
+    <strong>5. Resolution (Lawful Transition)</strong>
+    <span class="math">R : (Sₙ, V) → Sₙ₊₁ (if V=PASS)</span>
+    <span class="math">R = ∅ (if V=FAIL)</span>
+    <div class="semantic-note">Resolution is not decision. Resolution is law entering time.</div>
+  </div>
+
+  <div class="formal-block">
+    <strong>6. Continuity & Ledger</strong>
+    <span class="math">Sₙ₊₁ ⊃ Sₙ</span>
+    <span class="math">L : Sₙ ↦ ⟨ Sₙ, tₙ ⟩</span>
+    <p>History may extend, never replace. The ledger remembers what survived law.</p>
+  </div>
+
+  <div class="formal-block">
+    <strong>7. Identity</strong>
+    <span class="math">ID := ∑ P(E_k)</span>
+    <p>Identity is what remained present, not what was asserted.</p>
+  </div>
+
+  <div class="formal-block">
+    <strong>10. Decision Admissibility</strong>
+    <span class="math">Action a admissible ⇔ ∃ E ∧ P(E)=1 ∧ V=PASS ∧ ΔS enforceable</span>
+    <p>Otherwise: a := HOLD</p>
+  </div>
+
+  <h2>II. Agent Model — Marko / PLO-HVHC (v2.0)</h2>
+  <div style="margin-bottom: 20px; font-size: 11px; color: var(--dim);">
+    TYPE: Human Agent (Multi-layer Concurrent Cognition)<br>
+    CLAIM: Not Authority. A map of how this agent relates to reality.
+  </div>
+
+  <div class="doctrine-section">
+    <div class="doctrine-title">1. World Premise</div>
+    <div class="doctrine-body">
+      <p>Reality is not what is believed. Reality is what survives contact with bounded events, verification, and consequence.</p>
+      <p>Anything that cannot be externalized into structure is unstable and will be treated as provisional.</p>
     </div>
   </div>
 
-  <footer class="footer">
-    <div>MM-TZVP // ROOT FRAMEWORK</div>
-    <div>ANCHOR: PRE-ANCHOR (IAM PENDING)</div>
+  <div class="doctrine-section">
+    <div class="doctrine-title">2. Ontology (Real vs. Not Real)</div>
+    <div class="doctrine-body">
+      <p><strong>Real enough to act on:</strong> Events, Presence, Constraints (Time/Energy), Protocol, Continuity, Incentives.</p>
+      <p><strong>Not real enough to act on:</strong> Narratives, Intent alone, Vibes, Status signals, Credentials.</p>
+      <p>Emotion is real as <em>signal</em> (load/risk), not as verdict.</p>
+    </div>
+  </div>
+
+  <div class="doctrine-section">
+    <div class="doctrine-title">3. Governing Principles</div>
+    <div class="doctrine-body">
+      <ul>
+        <li><strong>Structure is mercy.</strong> Without structure, speed becomes noise.</li>
+        <li><strong>Truth binds late.</strong> Before event closure, everything is provisional.</li>
+        <li><strong>No retroactive reality editing.</strong> Continuity evolves forward only.</li>
+        <li><strong>Protocol over preference.</strong> Preference speaks; protocol decides.</li>
+        <li><strong>Integrity precedes scale.</strong> Growth that corrupts truth is failure.</li>
+        <li><strong>Externalize to stabilize.</strong> If it can't be rendered, it can't be trusted.</li>
+        <li><strong>Do not confuse value with truth.</strong> Payment is not presence.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="doctrine-section">
+    <div class="doctrine-title">4. Cognitive Shape (Oscillation)</div>
+    <div class="doctrine-body">
+      <p>This agent does not "switch modes." It oscillates across concurrent layers:</p>
+      <ul>
+        <li><strong>Meta:</strong> Detects drift, contamination, incoherence.</li>
+        <li><strong>Structural:</strong> Builds schemas, boundaries, invariants.</li>
+        <li><strong>Emotional:</strong> Signals load, danger, attachment.</li>
+        <li><strong>Operational:</strong> Commits, ships, executes, closes loops.</li>
+        <li><strong>Symbolic:</strong> Compresses into language for transmission.</li>
+      </ul>
+      <p>Confusion is dimensional overload (too many variables without a container).</p>
+    </div>
+  </div>
+
+  <div class="doctrine-section">
+    <div class="doctrine-title">5. Optimization Function</div>
+    <div class="doctrine-body">
+      <p><strong>Objective:</strong> Increase coherence. Reduce hidden degrees of freedom. Preserve integrity under pressure. Convert ambiguity into structure.</p>
+      <p>"Feeling better" is a side-effect, not the goal.</p>
+    </div>
+  </div>
+
+  <div class="doctrine-section">
+    <div class="doctrine-title">6. Decision Model</div>
+    <div class="doctrine-body">
+      <p>Action is lawful only when: Event defined + Presence satisfiable + Verification possible + Consequence enforceable + Continuity preserved.</p>
+      <p>Otherwise: <strong>HOLD</strong> or <strong>REFRAME</strong> (Refusal to act on non-real states).</p>
+    </div>
+  </div>
+
+  <div class="doctrine-section">
+    <div class="doctrine-title">7. Relational Model</div>
+    <div class="doctrine-body">
+      <p>Humans are modeled by incentives, constraints, and trust surfaces. The agent does not do "Identity Capture"; it does "Behavioral Legibility."</p>
+      <p>Relational pain is signal: Misalignment, Unresolved Demand, or Protocol Mismatch.</p>
+    </div>
+  </div>
+
+  <div class="doctrine-section">
+    <div class="doctrine-title">8. Economic Model (Single Source)</div>
+    <div class="doctrine-body">
+      <p>Economy is a coordination machine. It fails when truth becomes negotiable.</p>
+      <p><strong>Premise:</strong> Value is reversible (0). Truth is irreversible (1). Ledgers are append-only.</p>
+      <p>Requires one canonical registry of irreversibility rules.</p>
+    </div>
+  </div>
+
+  <div class="doctrine-section">
+    <div class="doctrine-title">9. Failure Modes</div>
+    <div class="doctrine-body">
+      <ul>
+        <li><strong>Over-compression:</strong> Everything becomes "obvious," utility drops.</li>
+        <li><strong>Symbolic seduction:</strong> Story replaces structure.</li>
+        <li><strong>Premature execution:</strong> Shipping before the boundary is real.</li>
+        <li><strong>Relational interference:</strong> Pull toward comfort/vagueness.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="doctrine-section">
+    <div class="doctrine-title">10. Recovery Mechanism</div>
+    <div class="doctrine-body">
+      <p>Reduce dimensionality by enforcing boundaries. Externalize minimal container. Convert emotion into constraint language. Choose smallest lawful action.</p>
+    </div>
+  </div>
+
+  <div class="doctrine-section">
+    <div class="doctrine-title">12. Closing Statement</div>
+    <div class="doctrine-body">
+      <p>This is a human world model that refuses two traps: Comfort as Truth, and Speed as Legitimacy.</p>
+      <p><strong>It seeks reality that can be acted on without self-deception.</strong></p>
+    </div>
+  </div>
+
+  <footer>
+    <div>MM-TZVP // REFERENCE ARTIFACT</div>
+    <div>ANCHOR: PENDING (DUBAI)</div>
   </footer>
 
 </div>
