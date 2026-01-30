@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>WORLD MODEL // MM-TZVP // REFERENCE</title>
+  <title>WORLD-MODEL - MM-TZVP - REFERENCE</title>
   
   <script type="application/ld+json">
   {
@@ -124,8 +124,8 @@
 <div class="container">
 
   <header>
-    <h1>WORLD MODEL REFERENCE // MM-TZVP</h1>
-    <div class="meta">STATUS: POST-FREEZE · VERSION: 2.0 (PLO-HVHC) · AUTHOR: MARKO MARKOTA</div>
+    <h1>WORLD-MODEL REFERENCE: MM-TZVP</h1>
+    <div class="meta">STATUS: POST-FREEZE · VERSION: 2.0 (PLO-HVHC) · HUMAN AGENT: MARKO MARKOTA</div>
   </header>
 
   <div class="diagram-container">
@@ -146,60 +146,60 @@
         ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ │ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
                            │
                     ┌──────▼───────┐
-                    │   EVENT E    │◄───────┐
-                    │ (bounded)    │        │
-                    └──────┬───────┘        │
-                           │                │
-                    ┌──────▼───────┐        │
-                    │ PRESENCE P   │        │
-                    │  {0 or 1}    │        │
-                    └──────┬───────┘        │
-                           │                │
-                    ┌──────▼───────┐        │
-                    │ VERIFICATION │        │
-                    │   V(E,P,Π)   │        │
-                    └───┬────┬─────┘        │
-                        │    │              │
-                FAIL ◄──┘    └──► PASS      │
-                        │                   │
-                ┌───────▼───────┐           │
-                │ SUPPRESSION   │           │
-                │ (no mutation) │           │
-                └───────────────┘           │
-                                            │
-                                    ┌──────▼───────┐
-                                    │ RESOLUTION R │
-                                    │ (lawful)     │
-                                    └──────┬───────┘
-                                           │
+                    │   EVENT E    │ ◄───────┐
+                    │ (bounded)    │         │
+                    └──────┬───────┘         │
+                           │                 │
+                    ┌──────▼───────┐         │
+                    │ PRESENCE P   │         │
+                    │  {0 or 1}    │         │
+                    └──────┬───────┘         │
+                           │                 │
+                    ┌──────▼───────┐         │
+                    │ VERIFICATION │         │
+                    │   V(E,P,Π)   │         │
+                    └───┬────┬─────┘         │
+                        │    │               │
+                FAIL ◄──┘    └──► PASS       │
+                        │                    │
+                ┌───────▼───────┐            │
+                │ SUPPRESSION   │            │
+                │ (no mutation) │            │
+                └───────────────┘            │
+                                             │
+                                      ┌──────▼───────┐
+                                        RESOLUTION R 
+                                          (lawful)   
+                                      └──────┬───────┘
+                                             │
                                     ┌────────▼────────┐
-                                    │  STATE Sₙ₊₁     │
-                                    │ (irreversible)  │
+                                         STATE Sₙ₊₁     
+                                      (irreversible)  
                                     └────────┬────────┘
-                                           │
+                                             │
                                     ┌────────▼────────┐
-                                    │  CONTINUITY     │
-                                    │  Sₙ ⊂ Sₙ₊₁      │
+                                         CONTINUITY      
+                                         Sₙ ⊂ Sₙ₊₁        
                                     └────────┬────────┘
-                                           │
+                                             │
                                     ┌────────▼────────┐
-                                    │  LEDGER L       │
-                                    │ (append-only)   │
+                                         LEDGER L        
+                                       (append-only)   
                                     └────────┬────────┘
-                                           │
+                                             │
                                     ┌────────▼────────┐
-                                    │  IDENTITY ID    │
-                                    │ Σ Presence      │
+                                        IDENTITY ID    
+                                        Σ Presence      
                                     └────────┬────────┘
-                                           │
+                                             │
                                     ┌────────▼────────┐
-                                    │  CO-AGENCY      │
-                                    │ (human+machine) │
+                                        CO-AGENCY       
+                                      (human+machine)  
                                     └────────┬────────┘
-                                           │
+                                             │
                                     ┌────────▼────────┐
-                                    │  CIVILIZATION   │
-                                    │ (emergent)      │
+                                       CIVILIZATION   
+                                        (emergent)      
                                     └─────────────────┘
   </div>
 
